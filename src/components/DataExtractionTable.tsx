@@ -47,7 +47,7 @@ function ExtractionTemplate() {
       <StaggerChildren className="grid md:grid-cols-2 gap-3">
         {EXTRACTION_DOMAINS.map((domain, idx) => (
           <StaggerItem key={domain.domain}>
-            <div className={`p-4 bg-white rounded-lg border border-ink-200 border-l-4 ${colors[idx]} hover:shadow-sm transition-shadow`}>
+            <div className={`p-4 bg-white rounded-lg border border-ink-200 border-l-4 ${colors[idx]} hover:shadow-sm transition-shadow h-full`}>
               <div className="flex items-baseline gap-3 mb-2">
                 <span className="text-[11px] font-mono text-ink-300 tabular-nums">{String(idx + 1).padStart(2, '0')}</span>
                 <h4 className="text-[14px] font-semibold text-ink-900">{domain.domain}</h4>
