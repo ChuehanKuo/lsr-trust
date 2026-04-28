@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { StatusBanner } from "./components/StatusBanner";
 import { Header } from "./components/Header";
 import { PRISMAFlow } from "./components/PRISMAFlow";
@@ -26,6 +27,7 @@ function App() {
         <TeamSection />
       </main>
       <Footer />
+      <Analytics />
     </div>
   );
 }
