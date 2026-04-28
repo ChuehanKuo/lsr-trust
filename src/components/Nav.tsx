@@ -14,20 +14,20 @@ export function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-ink-200">
-      <div className="max-w-[1100px] mx-auto px-6 flex items-center justify-between h-[60px]">
-        <a href="#" className="text-[15px] font-semibold text-ink-900 tracking-tight hover:text-teal-700 transition-colors">
-          AI & Patient Trust <span className="text-ink-300 font-normal">/ LSR</span>
+    <nav className="sticky top-0 z-50 bg-[#0f1a2e] border-b border-white/10">
+      <div className="max-w-[1100px] mx-auto px-6 flex items-center justify-between h-[52px]">
+        <a href="#" className="text-[14px] font-semibold text-white tracking-tight hover:text-teal-400 transition-colors">
+          AI & Patient Trust
         </a>
         <div className="hidden lg:flex items-center gap-6">
           {LINKS.map(([label, href]) => (
-            <a key={href} href={href} className="text-[13px] text-ink-500 hover:text-ink-900 transition-colors">
+            <a key={href} href={href} className="text-[12px] text-white/40 hover:text-white transition-colors">
               {label}
             </a>
           ))}
         </div>
         <button
-          className="lg:hidden p-2 text-ink-500 hover:text-ink-900"
+          className="lg:hidden p-2 text-white/50 hover:text-white"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -39,9 +39,9 @@ export function Nav() {
         </button>
       </div>
       {open && (
-        <div className="lg:hidden border-t border-ink-100 px-6 py-3">
+        <div className="lg:hidden border-t border-white/10 px-6 py-3 bg-[#0f1a2e]">
           {LINKS.map(([label, href]) => (
-            <a key={href} href={href} className="block py-2.5 text-[14px] text-ink-600 hover:text-ink-900" onClick={() => setOpen(false)}>
+            <a key={href} href={href} className="block py-2.5 text-[14px] text-white/50 hover:text-white" onClick={() => setOpen(false)}>
               {label}
             </a>
           ))}
