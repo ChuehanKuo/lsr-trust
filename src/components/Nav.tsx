@@ -14,29 +14,20 @@ export function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 glass border-b border-white/10">
-      <div className="max-w-5xl mx-auto px-5 sm:px-8 flex items-center justify-between h-16">
-        <a href="#" className="flex items-center gap-2.5 group">
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-teal-500/20">
-            <span className="text-white font-serif font-bold text-sm">L</span>
-          </div>
-          <span className="text-[14px] font-semibold text-ink-900 tracking-tight">
-            AI & Patient Trust
-          </span>
+    <nav className="sticky top-0 z-50 bg-white border-b border-ink-200">
+      <div className="max-w-[1100px] mx-auto px-6 flex items-center justify-between h-[60px]">
+        <a href="#" className="text-[15px] font-semibold text-ink-900 tracking-tight hover:text-teal-700 transition-colors">
+          AI & Patient Trust <span className="text-ink-300 font-normal">/ LSR</span>
         </a>
-        <div className="hidden lg:flex items-center gap-1">
+        <div className="hidden lg:flex items-center gap-6">
           {LINKS.map(([label, href]) => (
-            <a
-              key={href}
-              href={href}
-              className="px-3 py-2 rounded-lg text-[13px] text-ink-400 hover:text-ink-900 hover:bg-ink-100/80 transition-all duration-200 font-medium"
-            >
+            <a key={href} href={href} className="text-[13px] text-ink-500 hover:text-ink-900 transition-colors">
               {label}
             </a>
           ))}
         </div>
         <button
-          className="lg:hidden p-2 rounded-lg text-ink-400 hover:text-ink-900 hover:bg-ink-100 transition-colors"
+          className="lg:hidden p-2 text-ink-500 hover:text-ink-900"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -48,14 +39,9 @@ export function Nav() {
         </button>
       </div>
       {open && (
-        <div className="lg:hidden border-t border-ink-200/50 glass px-5 py-3 space-y-1">
+        <div className="lg:hidden border-t border-ink-100 px-6 py-3">
           {LINKS.map(([label, href]) => (
-            <a
-              key={href}
-              href={href}
-              className="block px-3 py-2.5 rounded-lg text-sm text-ink-500 hover:text-ink-900 hover:bg-ink-50"
-              onClick={() => setOpen(false)}
-            >
+            <a key={href} href={href} className="block py-2.5 text-[14px] text-ink-600 hover:text-ink-900" onClick={() => setOpen(false)}>
               {label}
             </a>
           ))}
