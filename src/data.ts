@@ -5,7 +5,7 @@ export const REVIEW_META = {
   type: "Living Systematic Review",
   status: "protocol" as const,
   lastUpdated: "2026-04-28",
-  prosperoId: "Pending",
+  prosperoId: "CRD420261377200",
   protocolDoi: null as string | null,
   protocolPdfUrl: null as string | null,
   journalTarget: "Systematic Reviews",
