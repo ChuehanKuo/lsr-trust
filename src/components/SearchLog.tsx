@@ -38,8 +38,8 @@ function SearchPlaceholder() {
       </div>
 
       <div className="grid md:grid-cols-2 gap-4">
-        <div className="p-5 rounded-lg bg-white border border-teal-200">
-          <h4 className="text-[11px] font-semibold text-teal-800 uppercase tracking-[0.12em] mb-4">Primary Databases</h4>
+        <div className="p-5 rounded-lg bg-ink-50 border border-ink-200 h-full">
+          <h4 className="text-[11px] font-semibold text-ink-600 uppercase tracking-[0.12em] mb-4">Primary Databases</h4>
           <div className="space-y-2.5">
             {primary.map(d => (
               <div key={d.name} className="flex items-center gap-2.5 text-[14px] text-ink-800 font-medium">
@@ -49,7 +49,7 @@ function SearchPlaceholder() {
             ))}
           </div>
         </div>
-        <div className="p-5 rounded-lg bg-ink-50 border border-ink-200">
+        <div className="p-5 rounded-lg bg-ink-50 border border-ink-200 h-full">
           <h4 className="text-[11px] font-semibold text-ink-600 uppercase tracking-[0.12em] mb-4">Grey Literature</h4>
           <div className="space-y-2.5">
             {grey.map(d => (
