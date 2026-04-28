@@ -10,7 +10,7 @@ export function Header() {
   ];
 
   return (
-    <header className="bg-[#0f1a2e] text-white">
+    <header className="bg-[#1e293b] text-white">
       <div className="max-w-[1100px] mx-auto px-6 py-16 md:py-24">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
           <div className="flex items-center gap-3 mb-10">

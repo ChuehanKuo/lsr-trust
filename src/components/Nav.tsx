@@ -14,7 +14,7 @@ export function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#0f1a2e] border-b border-white/10">
+    <nav className="sticky top-0 z-50 bg-[#1e293b] border-b border-white/10">
       <div className="max-w-[1100px] mx-auto px-6 flex items-center justify-between h-[52px]">
         <a href="#" className="text-[14px] font-semibold text-white tracking-tight hover:text-teal-400 transition-colors">
           AI & Patient Trust
@@ -39,7 +39,7 @@ export function Nav() {
         </button>
       </div>
       {open && (
-        <div className="lg:hidden border-t border-white/10 px-6 py-3 bg-[#0f1a2e]">
+        <div className="lg:hidden border-t border-white/10 px-6 py-3 bg-[#1e293b]">
           {LINKS.map(([label, href]) => (
             <a key={href} href={href} className="block py-2.5 text-[14px] text-white/50 hover:text-white" onClick={() => setOpen(false)}>
               {label}

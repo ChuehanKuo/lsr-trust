@@ -2,7 +2,7 @@ import { REVIEW_META } from "../data";
 
 export function Footer() {
   return (
-    <footer className="bg-[#0f1a2e] text-white/30">
+    <footer className="bg-[#1e293b] text-white/30">
       <div className="max-w-[1100px] mx-auto px-6 py-14">
         <div className="grid md:grid-cols-3 gap-8 text-[13px]">
           <div>
