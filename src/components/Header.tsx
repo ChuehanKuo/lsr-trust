@@ -3,48 +3,83 @@ import { REVIEW_META, SEARCH_ROUNDS, EXTRACTED_STUDIES, UPDATE_LOG, DATABASES } 
 
 export function Header() {
   const stats = [
-    { label: "Databases", value: DATABASES.filter(d => d.category === "primary").length.toString(), sub: "primary sources" },
-    { label: "Studies", value: EXTRACTED_STUDIES.length > 0 ? EXTRACTED_STUDIES.length.toString() : "—", sub: EXTRACTED_STUDIES.length > 0 ? "included" : "awaiting search" },
-    { label: "Search Rounds", value: SEARCH_ROUNDS.length > 0 ? SEARCH_ROUNDS.length.toString() : "0", sub: "completed" },
-    { label: "Updates", value: UPDATE_LOG.length.toString(), sub: "logged" },
+    { label: "Databases", value: DATABASES.filter(d => d.category === "primary").length, sub: "primary" },
+    { label: "Studies", value: EXTRACTED_STUDIES.length > 0 ? EXTRACTED_STUDIES.length : null, sub: EXTRACTED_STUDIES.length > 0 ? "included" : "pending" },
+    { label: "Rounds", value: SEARCH_ROUNDS.length, sub: "completed" },
+    { label: "Updates", value: UPDATE_LOG.length, sub: "logged" },
   ];
 
   return (
-    <header className="relative overflow-hidden hero-gradient">
-      <div className="absolute inset-0 gradient-mesh" />
+    <header className="relative overflow-hidden bg-ink-950 min-h-[85vh] flex items-center">
+      {/* Animated gradient orbs */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-[40%] -right-[20%] w-[800px] h-[800px] rounded-full bg-gradient-to-br from-teal-500/20 via-cyan-500/10 to-transparent blur-3xl animate-float" />
+        <div className="absolute -bottom-[30%] -left-[10%] w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-violet-500/10 via-teal-500/5 to-transparent blur-3xl animate-float-delayed" />
+        <div className="absolute top-[20%] left-[50%] w-[400px] h-[400px] rounded-full bg-gradient-to-r from-teal-400/5 to-cyan-400/5 blur-2xl animate-float-delayed" />
+      </div>
 
-      <div className="relative max-w-5xl mx-auto px-5 sm:px-8 pt-20 pb-16 md:pt-28 md:pb-24">
+      {/* Grid pattern */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: 'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)',
+        backgroundSize: '60px 60px',
+      }} />
+
+      <div className="relative max-w-5xl mx-auto px-5 sm:px-8 py-20 md:py-0 w-full">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-3xl"
         >
-          <div className="flex items-center gap-2.5 mb-8">
-            <span className="px-3 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-700 text-[11px] font-semibold uppercase tracking-widest">
+          <div className="flex items-center gap-3 mb-8">
+            <motion.span
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="px-3.5 py-1.5 rounded-full bg-gradient-to-r from-teal-500/20 to-cyan-500/20 border border-teal-400/30 text-teal-300 text-[11px] font-semibold uppercase tracking-[0.15em]"
+            >
               Living Systematic Review
-            </span>
-            <span className="px-3 py-1.5 rounded-full bg-ink-100 border border-ink-200 text-ink-400 text-[11px] font-medium uppercase tracking-widest">
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3 }}
+              className="px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/40 text-[11px] font-medium uppercase tracking-[0.15em]"
+            >
               Protocol
-            </span>
+            </motion.span>
           </div>
 
-          <h1 className="font-serif text-[2.25rem] sm:text-[2.75rem] md:text-[3.25rem] font-medium text-ink-900 leading-[1.08] text-balance mb-3 tracking-tight">
+          <h1 className="font-serif text-[2.5rem] sm:text-[3.25rem] md:text-[3.75rem] font-normal text-white leading-[1.05] text-balance mb-3 tracking-[-0.02em]">
             {REVIEW_META.title}
           </h1>
           {REVIEW_META.subtitle && (
-            <p className="font-serif text-[1.15rem] sm:text-[1.3rem] text-ink-400 italic mb-8">
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="font-serif text-[1.15rem] sm:text-[1.35rem] text-white/30 italic mb-8"
+            >
               {REVIEW_META.subtitle}
-            </p>
+            </motion.p>
           )}
 
-          <p className="text-[0.95rem] text-ink-500 leading-relaxed max-w-2xl mb-10">
-            Open-access data warehouse hosting the living data extraction sheet,
-            PRISMA flow, search audit trail, and methodology changelog. Updated
-            quarterly as new evidence emerges.
-          </p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="text-[1rem] text-white/40 leading-relaxed max-w-xl mb-12"
+          >
+            Open-access data warehouse with quarterly updates, PRISMA flow,
+            data extraction, and methodology changelog.
+          </motion.p>
 
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-[11px]">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="flex flex-wrap gap-x-6 gap-y-2 text-[11px] mb-16"
+          >
             {[
               ["PROSPERO", REVIEW_META.prosperoId],
               ["Reporting", "PRISMA-P / PRISMA-LSR"],
@@ -52,42 +87,46 @@ export function Header() {
               ["Cycle", "Quarterly"],
               ["Coverage", "Jan 2020 →"],
             ].map(([label, value]) => (
-              <div key={label} className="flex items-center gap-1.5">
-                <span className="text-ink-300 font-medium uppercase tracking-wider">{label}</span>
-                <span className="text-ink-600 font-medium">{value}</span>
+              <div key={label} className="flex items-center gap-2">
+                <span className="text-white/20 font-medium uppercase tracking-wider">{label}</span>
+                <span className="text-white/50 font-medium">{value}</span>
               </div>
             ))}
-          </div>
+          </motion.div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-14"
+          transition={{ duration: 0.6, delay: 0.7 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl"
         >
           {stats.map((s, i) => (
             <motion.div
               key={s.label}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 + i * 0.08 }}
-              className="group px-5 py-4 rounded-xl bg-white border border-ink-200/60 hover:border-teal-300/60 hover:shadow-lg hover:shadow-teal-500/5 transition-all duration-300"
+              transition={{ duration: 0.5, delay: 0.8 + i * 0.1 }}
+              className="group relative overflow-hidden rounded-2xl bg-white/[0.04] border border-white/[0.08] p-5 hover:bg-white/[0.07] hover:border-white/[0.15] transition-all duration-500"
             >
-              <div className="text-[1.75rem] font-semibold text-ink-900 font-mono tracking-tight leading-none group-hover:text-teal-700 transition-colors">
-                {s.value}
-              </div>
-              <div className="text-[11px] text-ink-400 mt-2">
-                <span className="text-ink-600 font-medium">{s.label}</span>
-                <span className="mx-1.5 text-ink-200">/</span>
-                {s.sub}
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative">
+                <div className="text-[2rem] font-semibold text-white font-mono tracking-tight leading-none">
+                  {s.value ?? "—"}
+                </div>
+                <div className="text-[11px] text-white/30 mt-2 font-medium">
+                  {s.label}
+                  <span className="text-white/15 mx-1">/</span>
+                  {s.sub}
+                </div>
               </div>
             </motion.div>
           ))}
         </motion.div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-teal-300/30 to-transparent" />
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
     </header>
   );
 }

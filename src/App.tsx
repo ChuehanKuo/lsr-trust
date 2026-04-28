@@ -14,8 +14,8 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       <Nav />
-      <StatusBanner />
       <Header />
+      <StatusBanner />
       <main>
         <PRISMAFlow />
         <DataExtractionTable />

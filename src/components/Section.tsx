@@ -17,22 +17,26 @@ export function Section({
   dark?: boolean;
 }) {
   return (
-    <section id={id} className={dark ? "bg-ink-100/40" : "bg-white"}>
-      <div className="max-w-5xl mx-auto px-5 sm:px-8 py-16 md:py-24">
+    <section id={id} className={dark ? "bg-ink-50" : "bg-white"}>
+      <div className="section-divider" />
+      <div className="max-w-5xl mx-auto px-5 sm:px-8 py-20 md:py-28">
         <FadeIn>
-          <div className="flex flex-wrap items-end justify-between gap-4 mb-10">
+          <div className="flex flex-wrap items-end justify-between gap-4 mb-12">
             <div>
-              <h2 className="font-serif text-[1.75rem] md:text-[2.1rem] font-medium text-ink-900 tracking-tight leading-tight">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-8 h-1 rounded-full bg-gradient-to-r from-teal-500 to-cyan-400" />
+              </div>
+              <h2 className="font-serif text-[2rem] md:text-[2.5rem] font-normal text-ink-900 tracking-tight leading-tight">
                 {title}
               </h2>
               {subtitle && (
-                <p className="text-[0.9rem] text-ink-400 mt-2 max-w-2xl leading-relaxed">{subtitle}</p>
+                <p className="text-[0.95rem] text-ink-400 mt-3 max-w-2xl leading-relaxed">{subtitle}</p>
               )}
             </div>
             {actions}
           </div>
         </FadeIn>
-        <FadeIn delay={0.1}>
+        <FadeIn delay={0.15}>
           {children}
         </FadeIn>
       </div>
