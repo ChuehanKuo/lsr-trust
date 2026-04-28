@@ -32,7 +32,7 @@ function PICOGrid() {
       <StaggerChildren className="grid md:grid-cols-2 gap-3">
         {items.map((item) => (
           <StaggerItem key={item.code}>
-            <div className="p-5 bg-white rounded-lg border border-ink-200 hover:shadow-sm transition-shadow">
+            <div className="p-5 bg-white rounded-lg border border-ink-200 hover:shadow-sm transition-shadow h-full">
               <div className="flex items-start gap-3.5">
                 <div className={`shrink-0 w-9 h-9 rounded-lg ${item.bg} ${item.fg} font-bold text-sm flex items-center justify-center`}>
                   {item.code}
