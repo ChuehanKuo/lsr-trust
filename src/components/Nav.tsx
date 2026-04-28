@@ -14,13 +14,13 @@ export function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-navy-950/95 backdrop-blur-md border-b border-white/[0.06]">
-      <div className="max-w-5xl mx-auto px-5 sm:px-8 flex items-center justify-between h-12">
+    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-ink-200/50">
+      <div className="max-w-5xl mx-auto px-5 sm:px-8 flex items-center justify-between h-14">
         <a href="#" className="flex items-center gap-2 group">
-          <span className="text-[13px] font-semibold text-white/90 tracking-tight group-hover:text-white transition-colors font-serif">
+          <span className="text-[13px] font-semibold text-ink-900 tracking-tight group-hover:text-teal-700 transition-colors font-serif">
             AI & Patient Trust
           </span>
-          <span className="hidden sm:inline px-1.5 py-0.5 rounded text-[9px] font-semibold text-teal-300/80 bg-teal-400/10 uppercase tracking-widest">
+          <span className="hidden sm:inline px-1.5 py-0.5 rounded-full text-[9px] font-semibold text-teal-600 bg-teal-50 border border-teal-200/50 uppercase tracking-widest">
             LSR
           </span>
         </a>
@@ -29,14 +29,14 @@ export function Nav() {
             <a
               key={href}
               href={href}
-              className="px-2.5 py-1 rounded text-[12px] text-white/40 hover:text-white/90 hover:bg-white/[0.06] transition-all font-medium"
+              className="px-3 py-1.5 rounded-lg text-[12px] text-ink-400 hover:text-ink-900 hover:bg-ink-100/60 transition-all font-medium"
             >
               {label}
             </a>
           ))}
         </div>
         <button
-          className="lg:hidden p-1.5 rounded text-white/50 hover:text-white hover:bg-white/[0.06] transition-colors"
+          className="lg:hidden p-1.5 rounded-lg text-ink-400 hover:text-ink-900 hover:bg-ink-100 transition-colors"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -48,12 +48,12 @@ export function Nav() {
         </button>
       </div>
       {open && (
-        <div className="lg:hidden border-t border-white/[0.06] bg-navy-950 px-5 py-2 space-y-0.5">
+        <div className="lg:hidden border-t border-ink-200/50 bg-white/95 backdrop-blur-xl px-5 py-2 space-y-0.5">
           {LINKS.map(([label, href]) => (
             <a
               key={href}
               href={href}
-              className="block px-3 py-2 rounded text-sm text-white/60 hover:text-white hover:bg-white/[0.06]"
+              className="block px-3 py-2.5 rounded-lg text-sm text-ink-500 hover:text-ink-900 hover:bg-ink-50"
               onClick={() => setOpen(false)}
             >
               {label}
