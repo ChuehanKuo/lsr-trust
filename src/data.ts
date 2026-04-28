@@ -227,18 +227,18 @@ AND ("2020/01/01"[Date - Publication] : "3000"[Date - Publication])`;
 
 export const TEAM = {
   core: [
-    { name: "John Tayu Lee (李達宇)", role: "Principal Investigator", affiliation: "Institute of Health Policy and Management, NTU College of Public Health; Harvard T.H. Chan School of Public Health" },
-    { name: "Alice Jo-Wei Wu (若薇)", role: "Second Author", affiliation: "Institute of Health Policy and Management, NTU College of Public Health" },
+    { name: "John Tayu Lee", role: "Principal Investigator", affiliation: "Institute of Health Policy and Management, NTU College of Public Health; Harvard T.H. Chan School of Public Health" },
+    { name: "Alice Jo Wei Wu", role: "Second Author", affiliation: "Institute of Health Policy and Management, NTU College of Public Health" },
     { name: "Hsiao-Hui Chen", role: "Co-Lead", affiliation: "Institute of Health Policy and Management, NTU College of Public Health" },
     { name: "Cheng-Heng Liu", role: "Clinical Contributor", affiliation: "Department of Medical Education, NTU Hospital" },
-    { name: "Rachel Ai-Ting Yang (楊艾庭)", role: "Team Member", affiliation: "MPH Program, NTU College of Public Health" },
-    { name: "Arthur C. Kuo (郭爵安)", role: "Data Platform & Extraction", affiliation: "Institute of Health Policy and Management, NTU College of Public Health" },
+    { name: "Rachel Ai-Ting Yang", role: "Team Member", affiliation: "MPH Program, NTU College of Public Health" },
+    { name: "Arthur C Kuo", role: "Data Platform & Extraction", affiliation: "Institute of Health Policy and Management, NTU College of Public Health" },
   ],
   committee: [
     { name: "Rifat Atun", affiliation: "Harvard T.H. Chan School of Public Health" },
-    { name: "Yu-Kang Tu (杜裕康)", affiliation: "Institute of Epidemiology and Preventive Medicine, NTU" },
+    { name: "Yu-Kang Tu", affiliation: "Institute of Epidemiology and Preventive Medicine, NTU" },
     { name: "Sian Tsuei", affiliation: "Faculty of Medicine, University of British Columbia" },
-    { name: "Pau-Chung Chen (陳保中)", affiliation: "NTU College of Public Health; National Health Research Institutes" },
+    { name: "Pau-Chung Chen", affiliation: "NTU College of Public Health; National Health Research Institutes" },
     { name: "Adam Dunn", affiliation: "School of Public Health, University of Sydney" },
   ],
 };
