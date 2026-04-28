@@ -7,11 +7,11 @@ export function PRISMAFlow() {
   const latest = hasData ? SEARCH_ROUNDS[SEARCH_ROUNDS.length - 1] : null;
 
   const steps = [
-    { label: "Identified", value: latest?.recordsIdentified },
-    { label: "Deduplicated", value: latest?.duplicatesRemoved != null && latest?.recordsIdentified != null ? latest.recordsIdentified - latest.duplicatesRemoved : null },
-    { label: "Screened", value: latest?.screened },
-    { label: "Assessed", value: latest?.fullTextAssessed },
-    { label: "Included", value: latest?.included },
+    { label: "Identified", value: latest?.recordsIdentified, color: "bg-teal-600" },
+    { label: "Deduplicated", value: latest?.duplicatesRemoved != null && latest?.recordsIdentified != null ? latest.recordsIdentified - latest.duplicatesRemoved : null, color: "bg-teal-500" },
+    { label: "Screened", value: latest?.screened, color: "bg-amber-500" },
+    { label: "Assessed", value: latest?.fullTextAssessed, color: "bg-amber-400" },
+    { label: "Included", value: latest?.included, color: "bg-emerald-600" },
   ];
 
   return (
@@ -20,7 +20,7 @@ export function PRISMAFlow() {
       title="PRISMA Flow"
       subtitle={hasData ? `Latest search: ${latest!.date}` : "Awaiting initial search (anticipated July 2026)."}
     >
-      <div className="grid grid-cols-5 gap-px bg-ink-200 rounded-lg overflow-hidden">
+      <div className="grid grid-cols-5 gap-3">
         {steps.map((step, i) => (
           <motion.div
             key={step.label}
@@ -28,14 +28,14 @@ export function PRISMAFlow() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.08 }}
-            className={`p-6 text-center ${i === steps.length - 1 && hasData ? "bg-teal-50" : "bg-white"}`}
+            className="text-center"
           >
-            <div className={`text-[2rem] font-serif mb-1 ${
-              hasData ? i === steps.length - 1 ? "text-teal-700" : "text-ink-900" : "text-ink-300"
-            }`}>
-              {step.value != null ? step.value.toLocaleString() : "—"}
+            <div className={`${step.color} text-white rounded-lg p-5 mb-2`}>
+              <div className="text-[1.75rem] font-serif leading-none">
+                {step.value != null ? step.value.toLocaleString() : "—"}
+              </div>
             </div>
-            <div className="text-[11px] font-medium text-ink-500 uppercase tracking-wide">{step.label}</div>
+            <div className="text-[11px] font-medium text-ink-600 uppercase tracking-wide">{step.label}</div>
           </motion.div>
         ))}
       </div>

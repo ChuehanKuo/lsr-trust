@@ -10,7 +10,7 @@ export function Header() {
   ];
 
   return (
-    <header className="border-b border-ink-200">
+    <header className="bg-teal-50 border-b border-teal-100">
       <div className="max-w-[1100px] mx-auto px-6 py-16 md:py-24">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
           <div className="flex items-center gap-3 mb-10">
