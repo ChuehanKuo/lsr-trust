@@ -25,6 +25,18 @@ function SearchPlaceholder() {
 
   return (
     <div className="space-y-4">
+      <div className="rounded-lg border border-dashed border-ink-200 overflow-hidden">
+        <div className="grid grid-cols-7 text-[11px] font-medium text-ink-400 uppercase tracking-wide border-b border-ink-200 bg-ink-50">
+          {["Round", "Date", "Type", "Records", "Duplicates", "Screened", "Included"].map(h => (
+            <div key={h} className="px-4 py-3">{h}</div>
+          ))}
+        </div>
+        <div className="px-4 py-8 text-center">
+          <p className="text-[13px] text-ink-400">No search rounds recorded yet</p>
+          <p className="text-[12px] text-ink-300 mt-1">Initial search anticipated July 2026</p>
+        </div>
+      </div>
+
       <div className="grid md:grid-cols-2 gap-4">
         <div className="p-5 rounded-lg bg-teal-50 border border-teal-200">
           <h4 className="text-[11px] font-semibold text-teal-800 uppercase tracking-[0.12em] mb-4">Primary Databases</h4>
