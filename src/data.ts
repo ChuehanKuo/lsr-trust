@@ -1,9 +1,10 @@
 export const REVIEW_META = {
   title: "Impact of Artificial Intelligence on Patient Trust in Physicians",
+  subtitle: "Protocol for a Living Systematic Review",
   shortTitle: "AI & Patient Trust",
   type: "Living Systematic Review",
   status: "protocol" as const,
-  lastUpdated: "2026-04-24",
+  lastUpdated: "2026-04-28",
   prosperoId: "Pending",
   protocolDoi: null as string | null,
   protocolPdfUrl: null as string | null,
@@ -117,6 +118,12 @@ export const UPDATE_LOG: UpdateLogEntry[] = [
     type: "protocol",
     summary: "Protocol finalized and submitted to Systematic Reviews. PROSPERO registration initiated. Data warehouse launched.",
   },
+  {
+    version: "v1.1",
+    date: "2026-04-28",
+    type: "methodology",
+    summary: "Search strategy expanded with additional AI terms (GAI, chatbot, XAI), trust-related terms (algorithm aversion, shared decision-making, health/digital/AI literacy, treatment adherence), and healthcare context terms. Language restriction updated to English-only publications.",
+  },
 ];
 
 export const DATABASES = [
@@ -144,7 +151,7 @@ export const INCLUSION_CRITERIA = [
   "Research measuring or evaluating outcomes related to physician–patient trust, transparency, accountability, or patient confidence in AI-assisted care",
   "Quantitative, qualitative, or mixed-methods research designs",
   "Published from January 2020 onward",
-  "No geographic or language restrictions",
+  "English-language publications only",
 ];
 
 export const EXCLUSION_CRITERIA = [
@@ -152,7 +159,6 @@ export const EXCLUSION_CRITERIA = [
   "Bundled technological systems where the specific impact of AI cannot be isolated",
   "Studies not reporting outcomes related to trust or physician–patient relationships",
   "Secondary research articles, commentaries, editorials, or conference abstracts without primary data",
-  "Published before January 2020",
 ];
 
 export const SEARCH_STRATEGY = `(
@@ -168,8 +174,11 @@ export const SEARCH_STRATEGY = `(
   OR "predictive model*"[tiab]
   OR "large language model*"[tiab]
   OR "generative AI"[tiab]
-  OR ChatGPT[tiab]
+  OR GAI[tiab]
+  OR chatbot*[tiab]
   OR "medical AI"[tiab]
+  OR "explainable AI"[tiab]
+  OR XAI[tiab]
 )
 AND
 (
@@ -181,6 +190,9 @@ AND
   OR "patient care"[tiab]
   OR diagnos*[tiab]
   OR "treatment planning"[tiab]
+  OR "health information"[tiab]
+  OR "clinical workflow*"[tiab]
+  OR "AI-mediated"[tiab]
 )
 AND
 (
@@ -196,25 +208,37 @@ AND
   OR "patient confidence"[tiab]
   OR "patient perception*"[tiab]
   OR trustworthiness[tiab]
+  OR "algorithm aversion"[tiab]
+  OR "shared decision-making"[tiab]
+  OR "shared decision making"[tiab]
+  OR "Decision Making, Shared"[Mesh]
+  OR transparency[tiab]
+  OR explainab*[tiab]
+  OR "health literacy"[tiab]
+  OR "Health Literacy"[Mesh]
+  OR "digital literacy"[tiab]
+  OR "AI literacy"[tiab]
+  OR "treatment adherence"[tiab]
+  OR "medication adherence"[tiab]
+  OR "Medication Adherence"[Mesh]
+  OR "Patient Compliance"[Mesh]
 )
 AND ("2020/01/01"[Date - Publication] : "3000"[Date - Publication])`;
 
 export const TEAM = {
   core: [
-    { name: "John Tayu Lee (李達宇)", role: "Principal Investigator", affiliation: "Institute of Health Policy and Management, NTU College of Public Health" },
-    { name: "Hui-Hsuan Chen", role: "Co-Lead", affiliation: "NTU College of Public Health" },
-    { name: "Cheng-Hsiu Liu", role: "Clinical Contributor", affiliation: "" },
-    { name: "Jo-Wei (若薇)", role: "Second Author", affiliation: "NTU College of Public Health" },
-    { name: "Ai-Ting Yang (楊艾庭)", role: "Team Member", affiliation: "NTU College of Public Health" },
-    { name: "Chueh-An Kuo (郭爵安)", role: "Data Platform & Extraction", affiliation: "NTU College of Public Health" },
+    { name: "John Tayu Lee (李達宇)", role: "Principal Investigator", affiliation: "Institute of Health Policy and Management, NTU College of Public Health; Harvard T.H. Chan School of Public Health" },
+    { name: "Alice Jo-Wei Wu (若薇)", role: "Second Author", affiliation: "Institute of Health Policy and Management, NTU College of Public Health" },
+    { name: "Hsiao-Hui Chen", role: "Co-Lead", affiliation: "Institute of Health Policy and Management, NTU College of Public Health" },
+    { name: "Cheng-Heng Liu", role: "Clinical Contributor", affiliation: "Department of Medical Education, NTU Hospital" },
+    { name: "Rachel Ai-Ting Yang (楊艾庭)", role: "Team Member", affiliation: "MPH Program, NTU College of Public Health" },
+    { name: "Arthur C. Kuo (郭爵安)", role: "Data Platform & Extraction", affiliation: "Institute of Health Policy and Management, NTU College of Public Health" },
   ],
   committee: [
     { name: "Rifat Atun", affiliation: "Harvard T.H. Chan School of Public Health" },
-    { name: "Pao-Chung Chen (陳保中)", affiliation: "National Taiwan University; Taiwan Public Health Association" },
-    { name: "Yu-Kang Tu (杜裕康)", affiliation: "National Taiwan University, College of Public Health" },
-    { name: "Adam Dunn", affiliation: "npj Digital Medicine, Editor" },
-    { name: "Brian Oldenburg", affiliation: "Baker Heart & Diabetes Institute" },
-    { name: "Sian Tsuei", affiliation: "University of British Columbia" },
-    { name: "Josip Car", affiliation: "King’s College London" },
+    { name: "Yu-Kang Tu (杜裕康)", affiliation: "Institute of Epidemiology and Preventive Medicine, NTU" },
+    { name: "Sian Tsuei", affiliation: "Faculty of Medicine, University of British Columbia" },
+    { name: "Pau-Chung Chen (陳保中)", affiliation: "NTU College of Public Health; National Health Research Institutes" },
+    { name: "Adam Dunn", affiliation: "School of Public Health, University of Sydney" },
   ],
 };

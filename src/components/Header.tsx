@@ -24,9 +24,14 @@ export function Header() {
             </span>
           </div>
 
-          <h1 className="font-serif text-[2rem] sm:text-[2.5rem] md:text-[3rem] font-medium text-white leading-[1.1] text-balance mb-6 tracking-tight">
+          <h1 className="font-serif text-[2rem] sm:text-[2.5rem] md:text-[3rem] font-medium text-white leading-[1.1] text-balance mb-2 tracking-tight">
             {REVIEW_META.title}
           </h1>
+          {REVIEW_META.subtitle && (
+            <p className="font-serif text-[1.1rem] sm:text-[1.25rem] text-white/35 italic mb-6">
+              {REVIEW_META.subtitle}
+            </p>
+          )}
 
           <p className="text-[0.95rem] sm:text-[1.05rem] text-white/45 leading-relaxed max-w-2xl mb-10">
             Open-access data warehouse hosting the living data extraction sheet,
