@@ -20,7 +20,7 @@ export function Resources() {
     {
       title: "PROSPERO Registration",
       description: `ID: ${REVIEW_META.prosperoId}`,
-      href: REVIEW_META.prosperoId !== "Pending" ? `https://www.crd.york.ac.uk/prospero/display_record.php?RecordID=${REVIEW_META.prosperoId}` : undefined,
+      href: REVIEW_META.prosperoId !== "Pending" ? `https://www.crd.york.ac.uk/PROSPERO/view/${REVIEW_META.prosperoId}` : undefined,
       download: false,
       available: REVIEW_META.prosperoId !== "Pending",
     },
