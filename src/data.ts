@@ -1,5 +1,5 @@
 export const REVIEW_META = {
-  title: "Impact of Artificial Intelligence on Patient Trust in Physicians",
+  title: "Effect of Artificial Intelligence on Patient Trust in Physicians",
   subtitle: "Protocol for a Living Systematic Review",
   shortTitle: "AI & Patient Trust",
   type: "Living Systematic Review",
